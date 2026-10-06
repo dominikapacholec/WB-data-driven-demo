@@ -1,8 +1,8 @@
 .theme-switch {
   position: relative;
   flex-shrink: 0;
-  width: var(--ax-public-icon-switch-width);
-  height: var(--ax-public-icon-switch-height);
+  width: var(--wb-public-icon-switch-width);
+  height: var(--wb-public-icon-switch-height);
   cursor: pointer;
 }
 
@@ -23,10 +23,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--ax-public-icon-switch-padding);
-  border-radius: calc(var(--ax-public-icon-switch-height) / 2);
-  background: var(--ax-public-icon-switch-track-bg);
-  color: var(--ax-public-icon-switch-icon-color);
+  padding: 0 var(--wb-public-icon-switch-padding);
+  border-radius: calc(var(--wb-public-icon-switch-height) / 2);
+  background: var(--wb-public-icon-switch-track-bg);
+  color: var(--wb-public-icon-switch-icon-color);
   transition: background-color 0.1s ease-in-out;
 }
 
@@ -34,27 +34,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--ax-public-icon-size-medium);
-  height: var(--ax-public-icon-size-medium);
+  width: var(--wb-public-icon-size-m);
+  height: var(--wb-public-icon-size-m);
 }
 
 .thumb {
   position: absolute;
-  top: var(--ax-public-icon-switch-thumb-offset);
-  left: var(--ax-public-icon-switch-thumb-offset);
+  top: var(--wb-public-icon-switch-thumb-offset);
+  left: var(--wb-public-icon-switch-thumb-offset);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--ax-public-icon-switch-thumb-size);
-  height: var(--ax-public-icon-switch-thumb-size);
+  width: var(--wb-public-icon-switch-thumb-size);
+  height: var(--wb-public-icon-switch-thumb-size);
   border-radius: 50%;
-  background: var(--ax-public-icon-switch-thumb-bg-primary);
-  color: var(--ax-public-icon-switch-icon-selected-color);
+  background: var(--wb-public-icon-switch-thumb-bg-primary);
+  color: var(--wb-public-icon-switch-icon-selected-color);
   transition: transform 0.1s ease-in-out;
 }
 
 .theme-switch:has(input:checked) .thumb {
-  transform: translate(var(--ax-public-icon-switch-translate));
+  transform: translate(var(--wb-public-icon-switch-translate));
 }
 
 .theme-switch:has(input:focus-visible) .thumb {

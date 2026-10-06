@@ -11,6 +11,7 @@
           "description": "Kicks off the pipeline from an editorial brief.",
           "icon": "NotePencil",
           "templateType": "start-node",
+          "isStartNode": true,
           "properties": {
             "audience": {
               "type": "string",

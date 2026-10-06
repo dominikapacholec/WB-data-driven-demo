@@ -30,6 +30,7 @@ const buildNode = (seed: SeedNode, index: Map<string, NodeConfig>): WorkflowBuil
       segments: [],
       type: def.type,
       icon: def.icon,
+      ...(def.isStartNode ? { isStartNode: true } : {}),
       properties: { ...buildDefaults(def), ...(seed.properties ?? {}) },
     },
   } as unknown as WorkflowBuilderNode;

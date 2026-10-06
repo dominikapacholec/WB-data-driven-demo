@@ -58,7 +58,7 @@ There are **no tests and no CI** in this repository, and no pre-commit hooks —
 ## Tech stack
 
 - **UI** — React 18.3, TypeScript 5.5, Vite 5.4 (`@vitejs/plugin-react`), CSS Modules.
-- **Editor** — `@workflowbuilder/sdk` 2.2 (Apache-2.0, public npm registry) on top of
+- **Editor** — `@workflowbuilder/sdk` 3.0 (Apache-2.0, public npm registry) on top of
   `@xyflow/react` 12.
 - **Forms** — `@jsonforms/core` and `@jsonforms/react` 3.8. The property panels are JSON
   Schema plus a JSON Forms uischema, both supplied by the config.
@@ -173,7 +173,6 @@ src/
   styles/                      # the CSS that deliberately stays global
     tokens.css                 # the --app-* alias layer and the --tone-* status palette
     base.css                   # html / body / #root element rules
-    sdk-overrides.css          # the rules that select SDK DOM we cannot scope by our own
     primitives.module.css      # classes shared by Tasks and Executions
     css-modules.decision-log.md  # what is global and what is a CSS module, and why
 ```

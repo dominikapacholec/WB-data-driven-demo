@@ -12,8 +12,8 @@
   width: 100%;
   min-width: 100px;
   background-color: transparent;
-  color: var(--ax-public-select-button-color);
-  border: var(--ax-public-select-border-size) solid var(--ax-public-select-button-border-color);
+  color: var(--wb-public-select-button-color);
+  border: var(--wb-public-select-border-size) solid var(--wb-public-select-button-border-color);
   font-family: inherit;
   font-size: 13px;
   line-height: 1;
@@ -24,21 +24,21 @@
 }
 
 .button--small {
-  gap: var(--ax-public-input-gap-small);
-  padding: var(--ax-public-input-padding-small);
-  border-radius: var(--ax-public-input-border-radius-small);
+  gap: var(--wb-public-input-gap-s);
+  padding: var(--wb-public-input-padding-s);
+  border-radius: var(--wb-public-input-border-radius-s);
 }
 
 .button--medium {
-  gap: var(--ax-public-input-gap-medium);
-  padding: var(--ax-public-input-padding-medium);
-  border-radius: var(--ax-public-input-border-radius-medium);
+  gap: var(--wb-public-input-gap-m);
+  padding: var(--wb-public-input-padding-m);
+  border-radius: var(--wb-public-input-border-radius-m);
 }
 
 .button--large {
-  gap: var(--ax-public-input-gap-large);
-  padding: var(--ax-public-input-padding-large);
-  border-radius: var(--ax-public-input-border-radius-large);
+  gap: var(--wb-public-input-gap-l);
+  padding: var(--wb-public-input-padding-l);
+  border-radius: var(--wb-public-input-border-radius-l);
 }
 
 .button:hover:not(:disabled) {
@@ -47,12 +47,12 @@
 
 .button[aria-expanded='true'],
 .button:focus-visible {
-  border-color: var(--ax-public-select-button-border-color-focus);
+  border-color: var(--wb-public-select-button-border-color-focus);
   outline: none;
 }
 
 .button:disabled {
-  color: var(--ax-public-select-button-color-disabled);
+  color: var(--wb-public-select-button-color-disabled);
   cursor: auto;
 }
 
@@ -87,21 +87,21 @@
   flex-direction: column;
   box-sizing: border-box;
   margin: 0;
-  padding: var(--ax-public-list-box-padding);
-  gap: var(--ax-public-list-box-gap);
+  padding: var(--wb-public-list-box-padding);
+  gap: var(--wb-public-list-box-gap);
   overflow-x: hidden;
   overflow-y: auto;
-  border-radius: var(--ax-public-list-box-border-radius);
-  background: var(--ax-public-list-box-background-color);
-  box-shadow: var(--ax-public-list-box-box-shadow);
+  border-radius: var(--wb-public-list-box-border-radius);
+  background: var(--wb-public-list-box-background-color);
+  box-shadow: var(--wb-public-list-box-box-shadow);
   font-size: 13px;
   line-height: 1;
   list-style: none;
 }
 
 .popup--above {
-  box-shadow: var(--ax-token-shadow-shadow-s-x) calc(-1 * var(--ax-token-shadow-shadow-s-y))
-    var(--ax-token-shadow-shadow-s-blur) var(--ax-token-shadow-shadow-s-spread) var(--ax-shadow);
+  box-shadow: var(--wb-ds-shadow-ui-s-x) calc(-1 * var(--wb-ds-shadow-ui-s-y))
+    var(--wb-ds-shadow-ui-s-blur) var(--wb-ds-shadow-ui-s-spread) var(--wb-ds-shadow-ui-color);
 }
 
 .option {
@@ -110,34 +110,34 @@
   box-sizing: border-box;
   width: max-content;
   min-width: 100%;
-  border-radius: var(--ax-public-list-border-radius);
-  color: var(--ax-public-list-item-color);
+  border-radius: var(--wb-public-list-border-radius);
+  color: var(--wb-public-list-item-color);
   cursor: pointer;
 }
 
 .popup--small .option {
-  gap: var(--ax-public-list-item-gap-small);
-  padding: var(--ax-public-list-item-padding-small);
+  gap: var(--wb-public-list-item-gap-small);
+  padding: var(--wb-public-list-item-padding-small);
 }
 
 .popup--medium .option {
-  gap: var(--ax-public-list-item-gap-medium);
-  padding: var(--ax-public-list-item-padding-medium);
+  gap: var(--wb-public-list-item-gap-medium);
+  padding: var(--wb-public-list-item-padding-medium);
 }
 
 .popup--large .option {
-  gap: var(--ax-public-list-item-gap-large);
-  padding: var(--ax-public-list-item-padding-large);
+  gap: var(--wb-public-list-item-gap-large);
+  padding: var(--wb-public-list-item-padding-large);
 }
 
 .option:hover,
 .option.is-active {
-  background-color: var(--ax-public-list-item-background-color);
+  background-color: var(--wb-public-list-item-background-color);
 }
 
 .option[aria-selected='true'] {
-  background-color: var(--ax-public-list-item-background-color-selected);
-  color: var(--ax-public-list-item-color-selected);
+  background-color: var(--wb-public-list-item-background-color-selected);
+  color: var(--wb-public-list-item-color-selected);
 }
 
 .option svg {

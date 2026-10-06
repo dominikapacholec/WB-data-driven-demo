@@ -9,6 +9,8 @@ export type NodeConfig = {
   /** WBIcon name */
   icon: string;
   templateType?: 'node' | 'start-node' | 'ai-node' | 'decision-node';
+  /** The workflow's entry point; the SDK copies it into the dropped node's `data`. */
+  isStartNode?: boolean;
   properties?: Record<string, FieldSchemaConfig>;
   required?: string[];
   /** Conditional validation */

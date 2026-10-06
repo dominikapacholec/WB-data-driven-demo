@@ -44,7 +44,7 @@ export const Switch = ({
           <span className={styles['thumb']} />
         </span>
         {label ? (
-          <span className={clsx(styles['label'], 'ax-public-p11')}>
+          <span className={clsx(styles['label'], 'wb-text-label-s')}>
             {required ? <Icon name="Asterisk" /> : null}
             {label}
           </span>

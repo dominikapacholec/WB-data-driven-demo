@@ -16,7 +16,7 @@ export const Tooltip = ({ label, description, align = 'center', children }: Prop
       {children}
       <span className={clsx(styles['pop'], styles['arrow'])} data-tooltip-pop aria-hidden="true" />
       <span
-        className={clsx(styles['pop'], styles['bubble'], 'ax-public-p11')}
+        className={clsx(styles['pop'], styles['bubble'], 'wb-text-label-s')}
         data-tooltip-pop
         aria-hidden="true"
       >

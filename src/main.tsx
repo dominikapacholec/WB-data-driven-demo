@@ -3,7 +3,6 @@
 import '@workflowbuilder/sdk/style.css';
 import './styles/tokens.css';
 import './styles/base.css';
-import './styles/sdk-overrides.css';
 
 import './wb/i18n';
 

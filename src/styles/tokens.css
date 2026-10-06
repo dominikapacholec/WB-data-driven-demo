@@ -1,87 +1,91 @@
 :root {
-  --app-bg: var(--ax-ui-bg-tertiary-default);
-  --app-surface: var(--ax-ui-bg-primary-default);
-  --app-text: var(--ax-txt-primary-default);
-  --app-text-muted: var(--ax-txt-secondary-default);
-  --app-text-faint: var(--ax-txt-tertiary-default);
-  --app-border: var(--ax-ui-stroke-primary-default);
-  --app-separator: var(--ax-ui-separator-primary-default);
-  --app-accent: var(--ax-colors-acc1-500);
-  --app-accent-hover: var(--ax-colors-acc1-600);
-  --app-on-accent: var(--ax-txt-primary-white);
+  --app-bg: var(--wb-ds-ui-bg-canvas);
+  --app-surface: var(--wb-ds-ui-bg-base);
+  --app-text: var(--wb-ds-ui-text-default);
+  --app-text-muted: var(--wb-ds-ui-text-subtle-default);
+  --app-text-faint: var(--wb-ds-ui-text-muted-default);
+  --app-border: var(--wb-ds-ui-stroke-default);
+  --app-separator: var(--wb-ds-ui-stroke-divider);
+  --app-accent: var(--wb-ds-ui-brand-fill);
+  --app-accent-hover: var(--wb-ds-ui-brand-fill-hover);
+  --app-on-accent: var(--wb-ds-ui-text-onaccent-default);
 
-  --app-radius: var(--ax-token-radius-shell);
-  --app-radius-sm: var(--ax-token-radius-element-8);
-  --app-radius-chip: var(--ax-token-radius-chips-m);
+  --app-radius: var(--wb-ds-radius-150);
+  --app-radius-sm: var(--wb-ds-radius-100);
+  --app-radius-chip: var(--wb-ds-radius-50);
 
-  --app-gap-xs: var(--ax-token-spacing-spacing-4);
-  --app-gap-sm: var(--ax-token-spacing-spacing-8);
-  --app-gap: var(--ax-token-spacing-spacing-16);
-  --app-gap-lg: var(--ax-token-spacing-spacing-24);
+  --app-gap-xs: var(--wb-ds-space-50);
+  --app-gap-sm: var(--wb-ds-space-100);
+  --app-gap: var(--wb-ds-space-200);
+  --app-gap-lg: var(--wb-ds-space-300);
 
-  --app-font: var(--wb-font-family);
-  --app-transition: var(--wb-transition);
-  --app-shadow: 0 1px 2px var(--ax-shadow);
+  --app-font: var(--wb-public-font-family);
+  --app-transition: var(--wb-public-transition);
+  --app-shadow: 0 1px 2px var(--wb-ds-shadow-ui-color);
 }
 
 /*
- * `--ax-ui-bg-secondary-default` is NOT monotonic across themes: in light it is
- * darker than the primary surface, in dark it is lighter. Using it directly for
+ * `--wb-ds-ui-bg-elevated` is NOT monotonic across themes: in light it is
+ * darker than the base surface, in dark it is lighter. Using it directly for
  * a hover state therefore reads correctly in one theme and inverted in the
  * other, so the hover surface gets an explicit per-theme value.
  */
 html[data-theme='light'] {
-  --app-surface-hover: var(--ax-colors-gray-200);
+  --app-surface-hover: var(--wb-ds-colors-gray-200);
 }
 
 html[data-theme='dark'] {
-  --app-surface-hover: var(--ax-colors-gray-650);
+  --app-surface-hover: var(--wb-ds-colors-gray-650);
 }
 
 :root {
-  --tone-neutral-bg: var(--ax-chips-neutral-bg);
-  --tone-neutral-txt: var(--ax-chips-neutral-txt);
+  --tone-neutral-bg: var(--wb-ds-components-chips-solid);
+  --tone-neutral-txt: var(--wb-ds-components-chips-solid-text);
   --tone-neutral-stroke: var(--app-border);
 
-  --tone-ok-bg: var(--ax-chips-acc3-bg);
-  --tone-ok-txt: var(--ax-chips-acc3-txt);
-  --tone-ok-stroke: var(--ax-chips-acc3-stroke);
+  --tone-ok-bg: var(--wb-ds-colors-acc3-500-10);
+  --tone-ok-txt: var(--wb-ds-colors-acc3-700);
+  --tone-ok-stroke: var(--wb-ds-colors-acc3-700);
 
-  --tone-warn-bg: var(--ax-chips-acc5-bg);
-  --tone-warn-txt: var(--ax-chips-acc5-txt);
-  --tone-warn-stroke: var(--ax-chips-acc5-stroke);
+  --tone-warn-bg: var(--wb-ds-colors-acc5-500-10);
+  --tone-warn-txt: var(--wb-ds-colors-acc5-700);
+  --tone-warn-stroke: var(--wb-ds-colors-acc5-700);
 
-  --tone-danger-bg: var(--ax-chips-acc2-bg);
-  --tone-danger-txt: var(--ax-chips-acc2-txt);
-  --tone-danger-stroke: var(--ax-chips-acc2-stroke);
+  --tone-danger-bg: var(--wb-ds-colors-acc2-500-10);
+  --tone-danger-txt: var(--wb-ds-colors-acc2-600);
+  --tone-danger-stroke: var(--wb-ds-colors-acc2-600);
 
-  --tone-info-bg: var(--ax-chips-acc1-bg);
-  --tone-info-txt: var(--ax-chips-acc1-txt);
-  --tone-info-stroke: var(--ax-chips-acc1-stroke);
+  --tone-info-bg: var(--wb-ds-colors-acc1-500-10);
+  --tone-info-txt: var(--wb-ds-colors-acc1-600);
+  --tone-info-stroke: var(--wb-ds-colors-acc1-600);
 }
 
 html[data-theme='dark'] {
-  --tone-ok-txt: color-mix(in oklab, var(--ax-colors-acc3-400) 58%, var(--ax-txt-primary-default));
-  --tone-ok-stroke: color-mix(in srgb, var(--ax-colors-acc3-400) 32%, transparent);
+  --tone-ok-txt: color-mix(
+    in oklab,
+    var(--wb-ds-colors-acc3-400) 58%,
+    var(--wb-ds-ui-text-default)
+  );
+  --tone-ok-stroke: color-mix(in srgb, var(--wb-ds-colors-acc3-400) 32%, transparent);
 
   --tone-warn-txt: color-mix(
     in oklab,
-    var(--ax-colors-acc5-400) 58%,
-    var(--ax-txt-primary-default)
+    var(--wb-ds-colors-acc5-400) 58%,
+    var(--wb-ds-ui-text-default)
   );
-  --tone-warn-stroke: color-mix(in srgb, var(--ax-colors-acc5-400) 32%, transparent);
+  --tone-warn-stroke: color-mix(in srgb, var(--wb-ds-colors-acc5-400) 32%, transparent);
 
   --tone-danger-txt: color-mix(
     in oklab,
-    var(--ax-colors-acc2-400) 58%,
-    var(--ax-txt-primary-default)
+    var(--wb-ds-colors-acc2-400) 58%,
+    var(--wb-ds-ui-text-default)
   );
-  --tone-danger-stroke: color-mix(in srgb, var(--ax-colors-acc2-400) 32%, transparent);
+  --tone-danger-stroke: color-mix(in srgb, var(--wb-ds-colors-acc2-400) 32%, transparent);
 
   --tone-info-txt: color-mix(
     in oklab,
-    var(--ax-colors-acc1-400) 58%,
-    var(--ax-txt-primary-default)
+    var(--wb-ds-colors-acc1-400) 58%,
+    var(--wb-ds-ui-text-default)
   );
-  --tone-info-stroke: color-mix(in srgb, var(--ax-colors-acc1-400) 32%, transparent);
+  --tone-info-stroke: color-mix(in srgb, var(--wb-ds-colors-acc1-400) 32%, transparent);
 }

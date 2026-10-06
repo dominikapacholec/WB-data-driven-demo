@@ -12,6 +12,7 @@ export const buildPaletteItem = (node: NodeConfig): PaletteItem => {
     description: node.description,
     icon: node.icon,
     ...(node.templateType ? { templateType: node.templateType } : {}),
+    ...(node.isStartNode ? { isStartNode: true } : {}),
     schema: buildSchema(node),
     uischema: buildUiSchema(node),
     defaultPropertiesData: buildDefaults(node),

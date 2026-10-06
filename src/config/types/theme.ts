@@ -17,7 +17,7 @@ export type TokenControlGroup = { label: string; controls: TokenControl[] };
 
 export type ThemeConfig = {
   defaultMode: ThemeMode;
-  /** `--ax-colors-*`, `--ax-primitive-*`, `--ax-token-*`, `--ax-public-*`, `--wb-*` */
+  /** `--wb-ds-*` design tokens, `--wb-public-*` SDK overrides, `--app-*` app-owned tokens */
   base: TokenMap;
   light: TokenMap;
   dark: TokenMap;

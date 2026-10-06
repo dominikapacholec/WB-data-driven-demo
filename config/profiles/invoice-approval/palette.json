@@ -11,6 +11,7 @@
           "description": "Starts the workflow when a new invoice arrives.",
           "icon": "Invoice",
           "templateType": "start-node",
+          "isStartNode": true,
           "properties": {
             "source": {
               "type": "string",

@@ -22,9 +22,9 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: var(--ax-public-switch-border-size) solid var(--ax-public-switch-outline-color);
+  border: var(--wb-public-switch-border-size) solid var(--wb-public-switch-outline-color);
   border-radius: 100px;
-  transition: background-color var(--ax-public-transition);
+  transition: background-color var(--wb-public-transition);
 }
 
 .control input {
@@ -50,47 +50,47 @@
   position: absolute;
   box-sizing: border-box;
   border-radius: 100px;
-  background-color: var(--ax-public-thumb-no-selected-color);
-  transition: transform var(--ax-public-transition);
+  background-color: var(--wb-public-thumb-no-selected-color);
+  transition: transform var(--wb-public-transition);
 }
 
 .control:has(input:focus-visible) {
   outline: none;
-  box-shadow: 0 0 0 2px var(--ax-public-switch-focus-border-color);
+  box-shadow: 0 0 0 2px var(--wb-public-switch-focus-border-color);
 }
 
 .control:has(input:checked) .track {
-  background-color: var(--ax-public-track-selected-color);
+  background-color: var(--wb-public-track-selected-color);
 }
 
 .control:has(input:checked) .thumb {
-  background-color: var(--ax-public-thumb-selected-color);
+  background-color: var(--wb-public-thumb-selected-color);
 }
 
 .control:has(input:disabled) {
-  border-color: var(--ax-public-switch-disabled-border-color);
+  border-color: var(--wb-public-switch-disabled-border-color);
 }
 
 .control:has(input:disabled) .track {
-  background-color: var(--ax-public-switch-disabled-background-color);
+  background-color: var(--wb-public-switch-disabled-background-color);
 }
 
 .control:has(input:disabled) .thumb {
-  background-color: var(--ax-public-thumb-disabled-color);
+  background-color: var(--wb-public-thumb-disabled-color);
 }
 
 .label {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--ax-public-form-label-color);
+  color: var(--wb-public-form-label-color);
 }
 
 .label svg {
   width: 0.625rem;
   min-width: 0.625rem;
   height: 0.625rem;
-  color: var(--ax-public-form-label-asterisk-color);
+  color: var(--wb-public-form-label-asterisk-color);
 }
 
 .error {
@@ -100,63 +100,75 @@
 }
 
 /* Sizes. Each block is the SDK's own token triplet for that size. */
+.switch {
+  --switch-thumb-size-medium: calc(
+    var(--wb-public-switch-height-medium) - 2 * var(--wb-public-switch-thumb-padding-medium)
+  );
+  --switch-thumb-size-small: calc(
+    var(--wb-public-switch-height-small) - 2 * var(--wb-public-switch-thumb-padding-small)
+  );
+  --switch-thumb-size-extra-small: calc(
+    var(--wb-public-switch-height-extra-small) - 2 *
+      var(--wb-public-switch-thumb-padding-extra-small)
+  );
+}
 
 .switch--medium .control {
-  width: var(--ax-public-switch-width-medium);
-  height: var(--ax-public-switch-height-medium);
+  width: var(--wb-public-switch-width-medium);
+  height: var(--wb-public-switch-height-medium);
 }
 
 .switch--medium .thumb {
-  left: var(--ax-public-switch-thumb-padding-medium);
-  width: var(--ax-switch-thumb-size-medium);
-  height: var(--ax-switch-thumb-size-medium);
+  left: var(--wb-public-switch-thumb-padding-medium);
+  width: var(--switch-thumb-size-medium);
+  height: var(--switch-thumb-size-medium);
 }
 
 .switch--medium .control:has(input:checked) .thumb {
   transform: translate(
     calc(
-      var(--ax-public-switch-width-medium) - var(--ax-switch-thumb-size-medium) - 2 *
-        var(--ax-public-switch-thumb-padding-medium) - var(--ax-public-switch-border-size)
+      var(--wb-public-switch-width-medium) - var(--switch-thumb-size-medium) - 2 *
+        var(--wb-public-switch-thumb-padding-medium) - var(--wb-public-switch-border-size)
     )
   );
 }
 
 .switch--small .control {
-  width: var(--ax-public-switch-width-small);
-  height: var(--ax-public-switch-height-small);
+  width: var(--wb-public-switch-width-small);
+  height: var(--wb-public-switch-height-small);
 }
 
 .switch--small .thumb {
-  left: var(--ax-public-switch-thumb-padding-small);
-  width: var(--ax-switch-thumb-size-small);
-  height: var(--ax-switch-thumb-size-small);
+  left: var(--wb-public-switch-thumb-padding-small);
+  width: var(--switch-thumb-size-small);
+  height: var(--switch-thumb-size-small);
 }
 
 .switch--small .control:has(input:checked) .thumb {
   transform: translate(
     calc(
-      var(--ax-public-switch-width-small) - var(--ax-switch-thumb-size-small) - 2 *
-        var(--ax-public-switch-thumb-padding-small) - var(--ax-public-switch-border-size)
+      var(--wb-public-switch-width-small) - var(--switch-thumb-size-small) - 2 *
+        var(--wb-public-switch-thumb-padding-small) - var(--wb-public-switch-border-size)
     )
   );
 }
 
 .switch--extra-small .control {
-  width: var(--ax-public-switch-width-extra-small);
-  height: var(--ax-public-switch-height-extra-small);
+  width: var(--wb-public-switch-width-extra-small);
+  height: var(--wb-public-switch-height-extra-small);
 }
 
 .switch--extra-small .thumb {
-  left: var(--ax-public-switch-thumb-padding-extra-small);
-  width: var(--ax-switch-thumb-size-extra-small);
-  height: var(--ax-switch-thumb-size-extra-small);
+  left: var(--wb-public-switch-thumb-padding-extra-small);
+  width: var(--switch-thumb-size-extra-small);
+  height: var(--switch-thumb-size-extra-small);
 }
 
 .switch--extra-small .control:has(input:checked) .thumb {
   transform: translate(
     calc(
-      var(--ax-public-switch-width-extra-small) - var(--ax-switch-thumb-size-extra-small) - 2 *
-        var(--ax-public-switch-thumb-padding-extra-small) - var(--ax-public-switch-border-size)
+      var(--wb-public-switch-width-extra-small) - var(--switch-thumb-size-extra-small) - 2 *
+        var(--wb-public-switch-thumb-padding-extra-small) - var(--wb-public-switch-border-size)
     )
   );
 }

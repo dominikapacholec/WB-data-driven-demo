@@ -237,6 +237,7 @@ const findStart = (
   edges: WorkflowBuilderEdge[],
 ): WorkflowBuilderNode | undefined => {
   return (
+    nodes.find((node) => node.data.isStartNode) ??
     nodes.find((node) => node.type === 'start-node') ??
     nodes.find((node) => !edges.some((edge) => edge.target === node.id))
   );

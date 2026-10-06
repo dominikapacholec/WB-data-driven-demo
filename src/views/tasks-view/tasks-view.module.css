@@ -77,12 +77,12 @@
 
 .btn--primary {
   border-color: transparent;
-  background: var(--ax-button-primary-bg-default);
+  background: var(--wb-ds-ui-brand-fill);
   color: var(--app-on-accent);
 }
 
 .btn--primary:hover {
-  background: var(--ax-button-primary-bg-hover);
+  background: var(--wb-ds-ui-brand-fill-hover);
 }
 
 .btn--danger {

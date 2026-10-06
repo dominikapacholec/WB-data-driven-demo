@@ -116,9 +116,10 @@
   display: none;
 }
 
+/* `--wb-sdk-*` is private in SDK 3.0, but it is the only lever for the palette width. */
 .palette {
-  --wb-sidebar-expanded-width: calc(
-    var(--ax-public-node-width) + 2 * var(--wb-sidebar-horizontal-padding)
+  --wb-sdk-sidebar-expanded-width: calc(
+    var(--wb-public-node-width) + 2 * var(--wb-sdk-sidebar-horizontal-padding)
   );
 }
 

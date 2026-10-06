@@ -1,63 +1,63 @@
 {
   "defaultMode": "dark",
   "base": {
-    "--ax-colors-acc1-500": "#c026d3",
-    "--ax-colors-acc1-600": "#a21caf",
-    "--ax-colors-acc1-400": "#e879f9",
-    "--wb-font-family": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace",
-    "--ax-token-radius-shell": "14px",
-    "--ax-token-radius-node-head": "0px",
-    "--ax-public-node-width": "17rem",
-    "--wb-transition": "0s"
+    "--wb-ds-colors-acc1-500": "#c026d3",
+    "--wb-ds-colors-acc1-600": "#a21caf",
+    "--wb-ds-colors-acc1-400": "#e879f9",
+    "--wb-public-font-family": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace",
+    "--app-radius": "14px",
+    "--wb-public-node-border-radius": "0px",
+    "--wb-public-node-width": "17rem",
+    "--wb-public-transition": "0s"
   },
   "light": {
-    "--ax-ui-bg-tertiary-default": "#f6f2fb",
-    "--ax-ui-bg-primary-default": "#ffffff",
-    "--ax-ui-bg-secondary-default": "#efe7f7",
-    "--ax-ui-stroke-primary-default": "#ded0ec",
-    "--ax-node-bg-primary-default": "#ffffff",
-    "--ax-node-bg-secondary-default": "#f3ebfa",
-    "--ax-node-stroke-primary-default": "#c9b4de",
-    "--ax-txt-primary-default": "#1b0f24",
-    "--ax-txt-secondary-default": "#5b476b",
-    "--ax-edge-primary-default": "#9b7ab5"
+    "--wb-ds-ui-bg-canvas": "#f6f2fb",
+    "--wb-ds-ui-bg-base": "#ffffff",
+    "--wb-ds-ui-bg-elevated": "#efe7f7",
+    "--wb-ds-ui-stroke-default": "#ded0ec",
+    "--wb-ds-canvas-node-bg-primary-default": "#ffffff",
+    "--wb-ds-canvas-node-bg-secondary-default": "#f3ebfa",
+    "--wb-ds-canvas-node-stroke-default": "#c9b4de",
+    "--wb-ds-ui-text-default": "#1b0f24",
+    "--wb-ds-ui-text-subtle-default": "#5b476b",
+    "--wb-ds-canvas-edge-stroke-default": "#9b7ab5"
   },
   "dark": {
-    "--ax-ui-bg-tertiary-default": "#0c0812",
-    "--ax-ui-bg-primary-default": "#160f1f",
-    "--ax-ui-bg-secondary-default": "#211730",
-    "--ax-ui-stroke-primary-default": "#33234a",
-    "--ax-node-bg-primary-default": "#1b1226",
-    "--ax-node-bg-secondary-default": "#271a37",
-    "--ax-node-stroke-primary-default": "#3d2957",
-    "--ax-txt-primary-default": "#f2e9fb",
-    "--ax-txt-secondary-default": "#b49bcb",
-    "--ax-edge-primary-default": "#6b4f8a"
+    "--wb-ds-ui-bg-canvas": "#0c0812",
+    "--wb-ds-ui-bg-base": "#160f1f",
+    "--wb-ds-ui-bg-elevated": "#211730",
+    "--wb-ds-ui-stroke-default": "#33234a",
+    "--wb-ds-canvas-node-bg-primary-default": "#1b1226",
+    "--wb-ds-canvas-node-bg-secondary-default": "#271a37",
+    "--wb-ds-canvas-node-stroke-default": "#3d2957",
+    "--wb-ds-ui-text-default": "#f2e9fb",
+    "--wb-ds-ui-text-subtle-default": "#b49bcb",
+    "--wb-ds-canvas-edge-stroke-default": "#6b4f8a"
   },
   "inspector": [
     {
       "label": "Brand",
       "controls": [
-        { "token": "--ax-colors-acc1-500", "label": "Brand", "kind": "color", "bucket": "base" },
-        { "token": "--ax-colors-acc1-600", "label": "Brand hover", "kind": "color", "bucket": "base" }
+        { "token": "--wb-ds-colors-acc1-500", "label": "Brand", "kind": "color", "bucket": "base" },
+        { "token": "--wb-ds-colors-acc1-600", "label": "Brand hover", "kind": "color", "bucket": "base" }
       ]
     },
     {
       "label": "Surfaces",
       "controls": [
-        { "token": "--ax-ui-bg-tertiary-default", "label": "Canvas", "kind": "color", "bucket": "mode" },
-        { "token": "--ax-ui-bg-primary-default", "label": "Panels", "kind": "color", "bucket": "mode" },
-        { "token": "--ax-node-bg-primary-default", "label": "Node fill", "kind": "color", "bucket": "mode" },
-        { "token": "--ax-node-stroke-primary-default", "label": "Node border", "kind": "color", "bucket": "mode" },
-        { "token": "--ax-edge-primary-default", "label": "Edges", "kind": "color", "bucket": "mode" },
-        { "token": "--ax-txt-primary-default", "label": "Text", "kind": "color", "bucket": "mode" }
+        { "token": "--wb-ds-ui-bg-canvas", "label": "Canvas", "kind": "color", "bucket": "mode" },
+        { "token": "--wb-ds-ui-bg-base", "label": "Panels", "kind": "color", "bucket": "mode" },
+        { "token": "--wb-ds-canvas-node-bg-primary-default", "label": "Node fill", "kind": "color", "bucket": "mode" },
+        { "token": "--wb-ds-canvas-node-stroke-default", "label": "Node border", "kind": "color", "bucket": "mode" },
+        { "token": "--wb-ds-canvas-edge-stroke-default", "label": "Edges", "kind": "color", "bucket": "mode" },
+        { "token": "--wb-ds-ui-text-default", "label": "Text", "kind": "color", "bucket": "mode" }
       ]
     },
     {
       "label": "Shape",
       "controls": [
         {
-          "token": "--ax-token-radius-shell",
+          "token": "--app-radius",
           "label": "Panel radius",
           "kind": "length",
           "unit": "px",
@@ -67,7 +67,7 @@
           "bucket": "base"
         },
         {
-          "token": "--ax-token-radius-node-head",
+          "token": "--wb-public-node-border-radius",
           "label": "Node radius",
           "kind": "length",
           "unit": "px",
@@ -77,7 +77,7 @@
           "bucket": "base"
         },
         {
-          "token": "--ax-public-node-width",
+          "token": "--wb-public-node-width",
           "label": "Node width",
           "kind": "length",
           "unit": "rem",
@@ -92,7 +92,7 @@
       "label": "Type & motion",
       "controls": [
         {
-          "token": "--wb-font-family",
+          "token": "--wb-public-font-family",
           "label": "Font",
           "kind": "choice",
           "bucket": "base",
@@ -103,7 +103,7 @@
           ]
         },
         {
-          "token": "--wb-transition",
+          "token": "--wb-public-transition",
           "label": "Motion",
           "kind": "choice",
           "bucket": "base",

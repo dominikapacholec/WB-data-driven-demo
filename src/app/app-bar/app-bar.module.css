@@ -140,12 +140,12 @@
 
 .primary {
   border-color: transparent !important;
-  background: var(--ax-button-primary-bg-default) !important;
+  background: var(--wb-ds-ui-brand-fill) !important;
   color: var(--app-on-accent) !important;
 }
 
 .primary:hover {
-  background: var(--ax-button-primary-bg-hover) !important;
+  background: var(--wb-ds-ui-brand-fill-hover) !important;
 }
 
 .toggled {
