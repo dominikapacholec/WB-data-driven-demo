@@ -32,7 +32,8 @@
     "--wb-ds-canvas-node-stroke-default": "#2b403d",
     "--wb-ds-ui-text-default": "#e8f1f0",
     "--wb-ds-ui-text-subtle-default": "#9db3b0",
-    "--wb-ds-canvas-edge-stroke-default": "#4a625f"
+    "--wb-ds-canvas-edge-stroke-default": "#4a625f",
+    "--xy-attribution-background-color": "transparent"
   },
   "inspector": [
     {

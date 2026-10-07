@@ -41,7 +41,8 @@
     "--wb-ds-ui-text-subtle-default": "#a9b3c4",
     "--wb-ds-canvas-edge-stroke-default": "#56637a",
     "--wb-public-scroll-thumb-color": "#3a465c",
-    "--wb-ds-canvas-node-focus-ring-active": "#f59e0b66"
+    "--wb-ds-canvas-node-focus-ring-active": "#f59e0b66",
+    "--xy-attribution-background-color": "transparent"
   },
   "inspector": [
     {
