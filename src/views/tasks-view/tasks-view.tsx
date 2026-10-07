@@ -122,7 +122,8 @@ export const TasksView = ({
 }) => {
   const allTaskIds = useRunStore((state) => state.taskOrder);
   const tasks = useRunStore((state) => state.tasks);
-  const [openId, setOpenId] = useState<string | null>(null);
+  const openId = useRunStore((state) => state.openTaskId);
+  const setOpenId = useRunStore((state) => state.openTask);
 
   /* Each profile is its own application; it must not see the other's inbox. */
   const taskOrder = allTaskIds.filter((id) => tasks[id].profileId === profileId);

@@ -52,6 +52,8 @@ type RunState = {
   tasks: Record<string, Task>;
   taskOrder: string[];
   trackedExecId: string | null;
+  /** The task shown in the Tasks view; lives here so the tracker can deep-link to it. */
+  openTaskId: string | null;
 
   createExecution: (
     execId: string,
@@ -67,6 +69,7 @@ type RunState = {
   closeTask: (taskId: string, status: TaskStatus, comment?: string) => void;
   trackExecution: (execId: string | null) => void;
   trackNewestFor: (profileId: string) => void;
+  openTask: (taskId: string | null) => void;
   clear: () => void;
 };
 
@@ -91,6 +94,7 @@ export const useRunStore = create<RunState>((set) => ({
   tasks: {},
   taskOrder: [],
   trackedExecId: null,
+  openTaskId: null,
 
   createExecution: (execId, profileId, workflowName, steps, context) =>
     set((state) => ({
@@ -161,5 +165,15 @@ export const useRunStore = create<RunState>((set) => ({
         state.order.find((id) => state.executions[id]?.profileId === profileId) ?? null,
     })),
 
-  clear: () => set({ executions: {}, order: [], tasks: {}, taskOrder: [], trackedExecId: null }),
+  openTask: (taskId) => set({ openTaskId: taskId }),
+
+  clear: () =>
+    set({
+      executions: {},
+      order: [],
+      tasks: {},
+      taskOrder: [],
+      trackedExecId: null,
+      openTaskId: null,
+    }),
 }));

@@ -1,6 +1,7 @@
 import { Icon, type WBIcon } from '@workflowbuilder/sdk';
 import { useMemo } from 'react';
 
+import { navigate } from '@/app/use-hash-route';
 import { Dropdown, type DropdownOption } from '@/components/dropdown/dropdown';
 import { Tooltip } from '@/components/tooltip/tooltip';
 import { type Execution, useRunStore } from '@/run/store';
@@ -32,6 +33,9 @@ export const RunTracker = ({ profileId }: { profileId: string }) => {
   const executions = useRunStore((state) => state.executions);
   const trackedExecId = useRunStore((state) => state.trackedExecId);
   const trackExecution = useRunStore((state) => state.trackExecution);
+  const tasks = useRunStore((state) => state.tasks);
+  const taskOrder = useRunStore((state) => state.taskOrder);
+  const openTask = useRunStore((state) => state.openTask);
 
   const runs = useMemo(
     () => order.map((id) => executions[id]).filter((run) => run?.profileId === profileId),
@@ -52,6 +56,19 @@ export const RunTracker = ({ profileId }: { profileId: string }) => {
 
   const tracked = trackedExecId ? executions[trackedExecId] : undefined;
   const openCount = runs.filter(isOpen).length;
+
+  /* The task the tracked run is parked on, if a human has to decide. */
+  const pendingTask =
+    tracked?.status === 'waiting'
+      ? taskOrder
+          .map((id) => tasks[id])
+          .find((task) => task.execId === tracked.id && task.status === 'pending')
+      : undefined;
+
+  const decide = (taskId: string) => {
+    openTask(taskId);
+    navigate('tasks');
+  };
 
   return (
     <div className={styles['tracker']}>
@@ -74,16 +91,12 @@ export const RunTracker = ({ profileId }: { profileId: string }) => {
 
       {tracked ? <StatusPill value={tracked.status} /> : null}
 
-      {openCount > 1 ? (
-        <Tooltip
-          label={`${openCount} runs are open`}
-          description="A node can only wear one badge, so the other runs are live but off-screen. Switch to one to see it."
-          align="start"
-        >
-          <span className={styles['open-runs']}>
-            <Icon name="Stack" size="medium" />
-            {openCount} open runs
-          </span>
+      {pendingTask ? (
+        <Tooltip label="Waiting for your decision" description={pendingTask.title} align="start">
+          <button type="button" className={styles['decide']} onClick={() => decide(pendingTask.id)}>
+            <Icon name="UserFocus" size="medium" />
+            Decide
+          </button>
         </Tooltip>
       ) : null}
     </div>
