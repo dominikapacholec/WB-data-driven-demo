@@ -55,9 +55,9 @@ html[data-theme='dark'] {
   --tone-danger-txt: var(--wb-ds-colors-acc2-600);
   --tone-danger-stroke: var(--wb-ds-colors-acc2-600);
 
-  --tone-info-bg: var(--wb-ds-colors-acc1-500-10);
-  --tone-info-txt: var(--wb-ds-colors-acc1-600);
-  --tone-info-stroke: var(--wb-ds-colors-acc1-600);
+  --tone-info-bg: var(--wb-ds-colors-acc4-500-10);
+  --tone-info-txt: var(--wb-ds-colors-acc4-600);
+  --tone-info-stroke: var(--wb-ds-colors-acc4-600);
 }
 
 html[data-theme='dark'] {
@@ -84,8 +84,8 @@ html[data-theme='dark'] {
 
   --tone-info-txt: color-mix(
     in oklab,
-    var(--wb-ds-colors-acc1-400) 58%,
+    var(--wb-ds-colors-acc4-400) 58%,
     var(--wb-ds-ui-text-default)
   );
-  --tone-info-stroke: color-mix(in srgb, var(--wb-ds-colors-acc1-400) 32%, transparent);
+  --tone-info-stroke: color-mix(in srgb, var(--wb-ds-colors-acc4-400) 32%, transparent);
 }

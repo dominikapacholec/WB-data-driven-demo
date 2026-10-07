@@ -11,7 +11,7 @@
     "--wb-public-transition": "160ms cubic-bezier(0.2, 0, 0, 1)"
   },
   "light": {
-    "--wb-ds-ui-bg-canvas": "#eef3f2",
+    "--wb-ds-ui-bg-canvas": "#f0f0f0",
     "--wb-ds-ui-bg-base": "#ffffff",
     "--wb-ds-ui-bg-elevated": "#f4f7f7",
     "--wb-ds-ui-stroke-default": "#dde5e4",
@@ -39,7 +39,12 @@
       "label": "Brand",
       "controls": [
         { "token": "--wb-ds-colors-acc1-500", "label": "Brand", "kind": "color", "bucket": "base" },
-        { "token": "--wb-ds-colors-acc1-600", "label": "Brand hover", "kind": "color", "bucket": "base" }
+        {
+          "token": "--wb-ds-colors-acc1-600",
+          "label": "Brand hover",
+          "kind": "color",
+          "bucket": "base"
+        }
       ]
     },
     {
@@ -47,9 +52,24 @@
       "controls": [
         { "token": "--wb-ds-ui-bg-canvas", "label": "Canvas", "kind": "color", "bucket": "mode" },
         { "token": "--wb-ds-ui-bg-base", "label": "Panels", "kind": "color", "bucket": "mode" },
-        { "token": "--wb-ds-canvas-node-bg-primary-default", "label": "Node fill", "kind": "color", "bucket": "mode" },
-        { "token": "--wb-ds-canvas-node-stroke-default", "label": "Node border", "kind": "color", "bucket": "mode" },
-        { "token": "--wb-ds-canvas-edge-stroke-default", "label": "Edges", "kind": "color", "bucket": "mode" },
+        {
+          "token": "--wb-ds-canvas-node-bg-primary-default",
+          "label": "Node fill",
+          "kind": "color",
+          "bucket": "mode"
+        },
+        {
+          "token": "--wb-ds-canvas-node-stroke-default",
+          "label": "Node border",
+          "kind": "color",
+          "bucket": "mode"
+        },
+        {
+          "token": "--wb-ds-canvas-edge-stroke-default",
+          "label": "Edges",
+          "kind": "color",
+          "bucket": "mode"
+        },
         { "token": "--wb-ds-ui-text-default", "label": "Text", "kind": "color", "bucket": "mode" }
       ]
     },
