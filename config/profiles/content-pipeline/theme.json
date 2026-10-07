@@ -1,9 +1,6 @@
 {
   "defaultMode": "dark",
   "base": {
-    "--wb-ds-colors-acc1-500": "#b45309",
-    "--wb-ds-colors-acc1-600": "#92400e",
-    "--wb-ds-colors-acc1-400": "#d97706",
     "--wb-public-font-family": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, monospace",
     "--app-radius": "14px",
     "--wb-public-node-border-radius": "0px",
@@ -11,43 +8,51 @@
     "--wb-public-transition": "0s"
   },
   "light": {
-    "--wb-ds-ui-bg-canvas": "#fffdfa",
+    "--wb-ds-colors-acc1-500": "#c2410c",
+    "--wb-ds-colors-acc1-600": "#9a3412",
+    "--wb-ds-colors-acc1-400": "#ea580c",
+    "--wb-ds-ui-bg-canvas": "#f7f7f5",
     "--wb-ds-ui-bg-base": "#ffffff",
-    "--wb-ds-ui-bg-elevated": "#f0ebe2",
-    "--wb-ds-ui-bg-inset": "#efe8dc",
-    "--wb-ds-ui-stroke-default": "#e3dccf",
+    "--wb-ds-ui-bg-elevated": "#efeeeb",
+    "--wb-ds-ui-bg-inset": "#ebe9e5",
+    "--wb-ds-ui-stroke-default": "#e0ded9",
     "--wb-ds-canvas-node-bg-primary-default": "#ffffff",
-    "--wb-ds-canvas-node-bg-secondary-default": "#f3eee5",
-    "--wb-ds-canvas-node-stroke-default": "#d4c9b6",
-    "--wb-ds-ui-text-default": "#1c1710",
-    "--wb-ds-ui-text-subtle-default": "#5e5445",
-    "--wb-ds-canvas-edge-stroke-default": "#a39580"
+    "--wb-ds-canvas-node-bg-secondary-default": "#f3f2ef",
+    "--wb-ds-canvas-node-stroke-default": "#d6d3cd",
+    "--wb-ds-ui-text-default": "#1c1b19",
+    "--wb-ds-ui-text-subtle-default": "#57534e",
+    "--wb-ds-canvas-edge-stroke-default": "#a29e97",
+    "--wb-public-scroll-thumb-color": "#cfccc6",
+    "--wb-ds-canvas-node-focus-ring-active": "#c2410c66"
   },
   "dark": {
-    "--wb-ds-ui-bg-canvas": "#0f0d0a",
-    "--wb-ds-ui-bg-base": "#181511",
-    "--wb-ds-ui-bg-elevated": "#221e18",
-    "--wb-ds-ui-bg-inset": "#1f1b15",
-    "--wb-ds-ui-stroke-default": "#332d24",
-    "--wb-ds-canvas-node-bg-primary-default": "#29231b",
-    "--wb-ds-canvas-node-bg-secondary-default": "#27221a",
-    "--wb-ds-canvas-node-stroke-default": "#3d3529",
-    "--wb-ds-ui-text-default": "#f5efe6",
-    "--wb-ds-ui-text-subtle-default": "#bfb3a1",
-    "--wb-ds-canvas-edge-stroke-default": "#6e6252",
-    "--wb-public-scroll-thumb-color": "#4a4033",
-    "--wb-ds-canvas-node-focus-ring-active": "#d9770666"
+    "--wb-ds-colors-acc1-500": "#d97706",
+    "--wb-ds-colors-acc1-600": "#b45309",
+    "--wb-ds-colors-acc1-400": "#f59e0b",
+    "--wb-ds-ui-bg-canvas": "#0c1017",
+    "--wb-ds-ui-bg-base": "#141a24",
+    "--wb-ds-ui-bg-elevated": "#1c2330",
+    "--wb-ds-ui-bg-inset": "#19202b",
+    "--wb-ds-ui-stroke-default": "#2a3344",
+    "--wb-ds-canvas-node-bg-primary-default": "#1f2633",
+    "--wb-ds-canvas-node-bg-secondary-default": "#283142",
+    "--wb-ds-canvas-node-stroke-default": "#384459",
+    "--wb-ds-ui-text-default": "#eef1f6",
+    "--wb-ds-ui-text-subtle-default": "#a9b3c4",
+    "--wb-ds-canvas-edge-stroke-default": "#56637a",
+    "--wb-public-scroll-thumb-color": "#3a465c",
+    "--wb-ds-canvas-node-focus-ring-active": "#f59e0b66"
   },
   "inspector": [
     {
       "label": "Brand",
       "controls": [
-        { "token": "--wb-ds-colors-acc1-500", "label": "Brand", "kind": "color", "bucket": "base" },
+        { "token": "--wb-ds-colors-acc1-500", "label": "Brand", "kind": "color", "bucket": "mode" },
         {
           "token": "--wb-ds-colors-acc1-600",
           "label": "Brand hover",
           "kind": "color",
-          "bucket": "base"
+          "bucket": "mode"
         }
       ]
     },
