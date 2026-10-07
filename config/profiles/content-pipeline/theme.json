@@ -29,12 +29,14 @@
     "--wb-ds-ui-bg-elevated": "#221e18",
     "--wb-ds-ui-bg-inset": "#1f1b15",
     "--wb-ds-ui-stroke-default": "#332d24",
-    "--wb-ds-canvas-node-bg-primary-default": "#1c1813",
+    "--wb-ds-canvas-node-bg-primary-default": "#29231b",
     "--wb-ds-canvas-node-bg-secondary-default": "#27221a",
     "--wb-ds-canvas-node-stroke-default": "#3d3529",
     "--wb-ds-ui-text-default": "#f5efe6",
     "--wb-ds-ui-text-subtle-default": "#bfb3a1",
-    "--wb-ds-canvas-edge-stroke-default": "#6e6252"
+    "--wb-ds-canvas-edge-stroke-default": "#6e6252",
+    "--wb-public-scroll-thumb-color": "#4a4033",
+    "--wb-ds-canvas-node-focus-ring-active": "#d9770666"
   },
   "inspector": [
     {
