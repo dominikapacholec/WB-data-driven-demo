@@ -195,7 +195,7 @@ config/profiles/<id>/workflow.json
 
 | File            | Contents                                                                                                                                             |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `profile.json`  | app chrome (document title, tagline, nav), the status vocabulary, `taskFields`, and `run` — the mocked run context plus the task summary          |
+| `profile.json`  | app chrome (document title, tagline, nav), the status vocabulary, `taskFields`, and `run` — the mocked run context plus the task summary             |
 | `theme.json`    | design tokens keyed by the SDK's real custom-property names, split into `base` / `light` / `dark`, plus `inspector` — which tokens get live controls |
 | `palette.json`  | node types **and** their property panels: JSON Schema `properties`, `required` and `allOf`, and the JSON Forms `ui.elements` with `rule` show/hide   |
 | `workflow.json` | the seeded diagram: `layoutDirection`, `seed.nodes` and `seed.edges`                                                                                 |
@@ -205,14 +205,23 @@ Two profiles ship: `invoice-approval` and `content-pipeline`. Switch between the
 
 `vite-plugins/config-api.ts` stands in for the config backend and exposes three GET routes:
 
-| Route                     | Response                                                   |
-| ------------------------- | ---------------------------------------------------------- |
-| `/api/profiles`           | the profile index                                          |
-| `/api/profiles/:id`       | the four files assembled into one document                 |
-| `/api/profiles/:id/:part` | one raw file (`profile`, `theme`, `palette` or `workflow`) |
+| Route                          | Response                                                   |
+| ------------------------------ | ---------------------------------------------------------- |
+| `/api/profiles.json`           | the profile index                                          |
+| `/api/profiles/:id.json`       | the four files assembled into one document                 |
+| `/api/profiles/:id/:part.json` | one raw file (`profile`, `theme`, `palette` or `workflow`) |
 
-Files are read from disk on every request and served with `Cache-Control: no-store` — edit a
-JSON file, reload the page, and the editor changes.
+In dev, files are read from disk on every request and served with `Cache-Control: no-store` —
+edit a JSON file, reload the page, and the editor changes. `npm run build` emits the same routes
+as static files into `dist/api/`, so a static host answers the same requests.
+
+## Deployment
+
+`.github/workflows/deploy.yml` builds the app and publishes `dist/` to GitHub Pages on every push
+to `main`. It sets `BASE_PATH=/<repo>/`, which becomes Vite's `base`. In the repository settings,
+set **Pages → Source** to **GitHub Actions**.
+
+On Pages the config is frozen at build time: to change a profile, edit the JSON and push.
 
 ## How it works
 

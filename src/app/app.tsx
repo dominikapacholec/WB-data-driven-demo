@@ -58,7 +58,7 @@ export const App = () => {
         <h1>The config backend did not answer</h1>
         <p>{error}</p>
         <p className={styles['boot-hint']}>
-          The editor is configured over HTTP by <code>GET /api/profiles</code>. Check the Vite
+          The editor is configured over HTTP by <code>GET /api/profiles.json</code>. Check the Vite
           middleware in <code>vite-plugins/config-api.ts</code>.
         </p>
       </div>

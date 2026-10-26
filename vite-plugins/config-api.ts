@@ -7,22 +7,26 @@ import type { Connect, Plugin } from 'vite';
  *
  * The point of the demo is that the editor is configured from a server, so the
  * config must arrive over HTTP and be visible in the Network tab — not be
- * imported as a module or served as a static asset. This middleware reads the
- * JSON off disk on every request (no caching), so editing a profile and
- * reloading is the whole iteration loop.
+ * imported as a module. In dev this middleware reads the JSON off disk on every
+ * request (no caching), so editing a profile and reloading is the whole
+ * iteration loop.
  *
- *   GET /api/profiles              -> the switcher menu
- *   GET /api/profiles/:id          -> the four files, assembled into one document
- *   GET /api/profiles/:id/:part    -> a single file (feeds the Config Studio tabs)
+ *   GET /api/profiles.json              -> the switcher menu
+ *   GET /api/profiles/:id.json          -> the four files, assembled into one document
+ *   GET /api/profiles/:id/:part.json    -> a single file (feeds the Config Studio tabs)
+ *
+ * The `.json` suffix lets `vite build` emit the same routes as static files, so
+ * a static host (GitHub Pages) answers exactly the requests the dev server does.
  */
 
 const PARTS = ['profile', 'theme', 'palette', 'workflow'] as const;
 type Part = (typeof PARTS)[number];
 
-const ROUTE = /^\/api\/profiles(?:\/([\w-]+))?(?:\/([\w-]+))?\/?$/;
+const ROUTE = /^\/api\/profiles(?:\/([\w-]+))?(?:\/([\w-]+))?\.json$/;
 
 export const configApi = (configDir = 'config/profiles'): Plugin => {
   const root = resolve(process.cwd(), configDir);
+  let base = '/';
 
   const readJson = async (...segments: string[]) =>
     JSON.parse(await readFile(join(root, ...segments), 'utf8')) as unknown;
@@ -35,9 +39,9 @@ export const configApi = (configDir = 'config/profiles'): Plugin => {
     res.end(payload);
   };
 
-  const listProfiles = async () => {
+  const listProfiles = async (): Promise<{ profiles: { id: string }[] }> => {
     try {
-      return await readJson('index.json');
+      return (await readJson('index.json')) as { profiles: { id: string }[] };
     } catch {
       const dirs = await readdir(root, { withFileTypes: true });
       return {
@@ -62,7 +66,8 @@ export const configApi = (configDir = 'config/profiles'): Plugin => {
   };
 
   const middleware: Connect.NextHandleFunction = (req, res, next) => {
-    const url = (req.url ?? '').split('?')[0];
+    let url = (req.url ?? '').split('?')[0];
+    if (url.startsWith(base)) url = `/${url.slice(base.length)}`;
     const match = ROUTE.exec(url);
     if (!match || req.method !== 'GET') return next();
 
@@ -86,8 +91,24 @@ export const configApi = (configDir = 'config/profiles'): Plugin => {
 
   return {
     name: 'wb-config-api',
+    configResolved: (config) => {
+      base = config.base;
+    },
     configureServer: (server) => void server.middlewares.use(middleware),
-    // Keep `npm run build && npm run preview` working too.
     configurePreviewServer: (server) => void server.middlewares.use(middleware),
+    // Freeze the same routes into dist/ for static hosting.
+    async generateBundle() {
+      const emit = (fileName: string, body: unknown) =>
+        this.emitFile({ type: 'asset', fileName, source: JSON.stringify(body, null, 2) });
+
+      const index = await listProfiles();
+      emit('api/profiles.json', index);
+      for (const { id } of index.profiles) {
+        emit(`api/profiles/${id}.json`, await assemble(id));
+        for (const part of PARTS) {
+          emit(`api/profiles/${id}/${part}.json`, await readJson(id, `${part}.json`));
+        }
+      }
+    },
   };
 };

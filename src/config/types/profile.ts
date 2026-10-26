@@ -85,7 +85,7 @@ export type ProfileMeta = {
 
 /* DOCUMENT */
 
-/** The assembled document served by `GET /api/profiles/:id`. */
+/** The assembled document served by `GET /api/profiles/:id.json`. */
 export type EditorProfile = ProfileMeta & {
   theme: ThemeConfig;
   palette: PaletteConfig;

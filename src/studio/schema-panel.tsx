@@ -77,7 +77,7 @@ export const SchemaPanel = ({ profile, onApplyPalette }: Props) => {
         <p className={styles['lede']}>
           Straight from{' '}
           <code>
-            GET /api/profiles/{profile.id}/{part}
+            GET /api/profiles/{profile.id}/{part}.json
           </code>
           . Editing the palette rewrites the node types and their property schemas at runtime.
         </p>

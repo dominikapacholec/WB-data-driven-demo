@@ -4,7 +4,8 @@ import type { EditorProfile, ProfileId, ProfileIndex } from './types/profile';
  * The whole editor is configured by one backend call.
  */
 
-const API_BASE = '/api/profiles';
+// Relative to the deploy base, so it also works under a GitHub Pages subpath.
+const API_BASE = `${import.meta.env.BASE_URL}api/profiles`;
 
 const getJson = async <T>(url: string): Promise<T> => {
   const response = await fetch(url);
@@ -28,16 +29,16 @@ const validate = (profile: EditorProfile, id: ProfileId): EditorProfile => {
 };
 
 export const loadIndex = (): Promise<ProfileIndex> => {
-  return getJson<ProfileIndex>(API_BASE);
+  return getJson<ProfileIndex>(`${API_BASE}.json`);
 };
 
 export const loadProfile = async (id: ProfileId): Promise<EditorProfile> => {
-  return validate(await getJson<EditorProfile>(`${API_BASE}/${id}`), id);
+  return validate(await getJson<EditorProfile>(`${API_BASE}/${id}.json`), id);
 };
 
 export const loadProfilePart = (
   id: ProfileId,
   part: 'profile' | 'theme' | 'palette' | 'workflow',
 ): Promise<unknown> => {
-  return getJson(`${API_BASE}/${id}/${part}`);
+  return getJson(`${API_BASE}/${id}/${part}.json`);
 };
