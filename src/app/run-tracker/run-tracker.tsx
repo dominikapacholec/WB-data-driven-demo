@@ -18,10 +18,6 @@ const OPTION_ICON: Record<string, WBIcon> = {
   cancelled: 'Prohibit',
 };
 
-/** Open == still going somewhere: it can still change the badges you see. */
-const isOpen = (execution: Execution): boolean =>
-  execution.status === 'running' || execution.status === 'waiting';
-
 const position = (execution: Execution): string => {
   if (!execution.currentNodeId) return `started ${execution.startedAt}`;
   const step = execution.steps.find((candidate) => candidate.id === execution.currentNodeId);
@@ -55,7 +51,6 @@ export const RunTracker = ({ profileId }: { profileId: string }) => {
   if (!runs.length) return null;
 
   const tracked = trackedExecId ? executions[trackedExecId] : undefined;
-  const openCount = runs.filter(isOpen).length;
 
   /* The task the tracked run is parked on, if a human has to decide. */
   const pendingTask =
