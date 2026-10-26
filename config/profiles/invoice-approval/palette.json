@@ -226,12 +226,7 @@
               "label": "Approval mode",
               "options": [
                 { "label": "Manual review", "value": "manual", "icon": "UserFocus" },
-                { "label": "Auto-approve below threshold", "value": "auto", "icon": "Lightning" },
-                {
-                  "label": "Escalate after timeout",
-                  "value": "escalate",
-                  "icon": "ArrowBendUpRight"
-                }
+                { "label": "Auto-approve below threshold", "value": "auto", "icon": "Lightning" }
               ]
             },
             "assignee": {
@@ -277,10 +272,6 @@
             {
               "if": { "properties": { "approvalMode": { "const": "auto" } } },
               "then": { "properties": { "thresholdAmount": { "type": "number", "minimum": 1 } } }
-            },
-            {
-              "if": { "properties": { "approvalMode": { "const": "escalate" } } },
-              "then": { "properties": { "dueAfterHours": { "type": "number", "minimum": 1 } } }
             }
           ],
           "ui": {
@@ -339,14 +330,8 @@
                     "rule": {
                       "effect": "SHOW",
                       "condition": {
-                        "type": "OR",
-                        "conditions": [
-                          { "scope": "#/properties/approvalMode", "schema": { "const": "manual" } },
-                          {
-                            "scope": "#/properties/approvalMode",
-                            "schema": { "const": "escalate" }
-                          }
-                        ]
+                        "scope": "#/properties/approvalMode",
+                        "schema": { "const": "manual" }
                       }
                     }
                   },
